@@ -10,7 +10,9 @@ namespace MiniProgram
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
+            Person person = new Person() { Name = "Bob", Age = 21, HasPet = true};
+
+            person.Greeting();
         }
     }
 }

@@ -8,13 +8,13 @@ namespace MiniProgram
 {
     internal class Person
     {
-        public string name;
-        public int age;
-        public bool hasPet;
+        public string Name;
+        public int Age;
+        public bool HasPet;
 
         public void Greeting()
         {
-            Console.WriteLine($"Hello my name is {name}, I am {age} years old, and I have a pet");
+            Console.WriteLine($"Hello my name is {Name}, I am {Age} years old, and I have a pet");
         }
 
         public void Sleep()
