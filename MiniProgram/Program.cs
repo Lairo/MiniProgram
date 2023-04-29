@@ -17,7 +17,7 @@ namespace MiniProgram
                 {
                     while (cal.FirstNumber == 0)
                     {
-                        Console.Write("\nx:");
+                        Console.Write("\nWrite the first number:\n");
                         string bob = Console.ReadLine();
                         if (int.TryParse(bob, out int x) && x != 0)
                         {
@@ -25,7 +25,7 @@ namespace MiniProgram
 
                             while (cal.SecondNumber == 0)
                             {
-                                Console.Write("\ny:");
+                                Console.Write("\nWrite the second number:\n");
                                 string steven = Console.ReadLine();
                                 if (int.TryParse(steven, out int y) && y != 0)
                                 {
