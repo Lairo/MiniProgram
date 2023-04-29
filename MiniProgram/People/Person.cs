@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniProgram
+namespace MiniProgram.People
 {
     internal class Person
     {
