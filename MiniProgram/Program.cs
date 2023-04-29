@@ -19,7 +19,7 @@ namespace MiniProgram
                     {
                         Console.Write("\nx:");
                         string bob = Console.ReadLine();
-                        if (int.TryParse(bob, out int x) && x != 0 )
+                        if (int.TryParse(bob, out int x) && x != 0)
                         {
                             cal.FirstNumber = x;
 

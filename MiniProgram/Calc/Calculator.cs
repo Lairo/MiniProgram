@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MiniProgram.Calc
 {
@@ -14,7 +10,7 @@ namespace MiniProgram.Calc
 
 
         public static int Add(int x, int y)
-        {   
+        {
             return x + y;
         }
 
@@ -47,7 +43,7 @@ namespace MiniProgram.Calc
                     Console.WriteLine($"The Answer: {Multiply(FirstNumber, SecondNumber)}.");
                     break;
                 case '/':
-                    Console.WriteLine($"The Answer: {Divide(FirstNumber , SecondNumber)}.");
+                    Console.WriteLine($"The Answer: {Divide(FirstNumber, SecondNumber)}.");
                     break;
             }
         }
