@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MiniProgram.People;
-using MiniProgram.Calc;
+﻿using MiniProgram.Calc;
+using System;
 
 namespace MiniProgram
 {
@@ -12,35 +7,62 @@ namespace MiniProgram
     {
         static void Main(string[] args)
         {
-            Console.Write("What type of calculation do you want to perform? (+, -, * or /): ");
+            Calculator cal = new Calculator(0, 0, ' ');
+            while (true)
+            {
+                Console.Write("What type of calculation do you want to perform? (+, -, * or /): ");
 
-            string sign = Console.ReadLine();
+                char sign = Console.ReadKey().KeyChar;
+                if (sign == '-' || sign == '/' || sign == '+' || sign == '*')
+                {
+                    while (cal.FirstNumber == 0)
+                    {
+                        Console.Write("\nx:");
+                        string bob = Console.ReadLine();
+                        if (int.TryParse(bob, out int x) && x != 0 )
+                        {
+                            cal.FirstNumber = x;
 
-            Console.Write("x:");
-            string bob = Console.ReadLine();
-            int.TryParse(bob, out int x);
-            Console.Write("y:");
-            string steven = Console.ReadLine();
-            int.TryParse(steven, out int y);
+                            while (cal.SecondNumber == 0)
+                            {
+                                Console.Write("\ny:");
+                                string steven = Console.ReadLine();
+                                if (int.TryParse(steven, out int y) && y != 0)
+                                {
+                                    cal.SecondNumber = y;
+                                    cal.Operation(sign);
+
+                                    Console.WriteLine("\nWould you like to try again?\n");
+                                    Console.Write("Write 'yes' to restart application: ");
+                                    string answer = Console.ReadLine();
+
+                                    if (answer.ToLower() != "yes")
+                                    {
+                                        Environment.Exit(0);
+                                    }
+                                    Console.Clear();
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Try again! This time with actual number... -_-*");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Try again! This time with actual number... -_-*");
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("\nChoose a valid operator type!");
+                }
 
 
-            switch (sign) {
-                case "+":
-                    Console.WriteLine($"The Answer: {Calculator.Add(x, y)}.");
-                    break;
-                case "-":
-                    Console.WriteLine($"The Answer: {Calculator.Subtract(x, y)}.");
-                    break;
-                case "*":
-                    Console.WriteLine($"The Answer: {Calculator.Multiply(x, y)}.");
-                    break;
-                case "/":
-                    Console.WriteLine($"The Answer: {Calculator.Divide(x, y)}.");
-                    break;
             }
-
-            //Console.WriteLine($"Answer: {}");
-
         }
     }
 }
